@@ -1,4 +1,5 @@
 ﻿using BookManagerApi.Models;
+using System.Linq;
 
 namespace BookManagerApi.Services
 {
@@ -47,6 +48,16 @@ namespace BookManagerApi.Services
         public bool BookExists(long id)
         {
             return _context.Books.Any(b => b.Id == id);
+        }
+        public void DeleteBookById(int id)
+        {
+            var book = _context.Books.FirstOrDefault(n => n.Id == id);
+            if (book != null)
+            {
+                _context.Books.Remove(book);
+                _context.SaveChanges();
+
+            }
         }
     }
 }

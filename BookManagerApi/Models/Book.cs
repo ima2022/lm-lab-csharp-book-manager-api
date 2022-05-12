@@ -1,5 +1,4 @@
-﻿using System;
-namespace BookManagerApi.Models
+﻿namespace BookManagerApi.Models
 {
 	public class Book
 	{

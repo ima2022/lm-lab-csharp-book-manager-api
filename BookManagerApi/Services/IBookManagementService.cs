@@ -8,7 +8,9 @@ namespace BookManagerApi.Services
         List<Book> GetAllBooks();
         Book Create(Book book);
         Book Update(long id, Book book);
+       
         Book FindBookById(long id);
         bool BookExists(long id);
+        void DeleteBookById(int id);
     }
 }
